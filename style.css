@@ -74,7 +74,6 @@ li.selected{
 #intro{
     width: 50%;
     height: 100%;
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -86,7 +85,6 @@ li.selected{
 #fullstack{
     width: 50%;
     height: 100%;
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -98,10 +96,41 @@ li.selected{
 #containerfrontback{
     width: 80%;
     height: 60%;
-    border: 1px solid white;
-    border-radius: 5px;
-    backdrop-filter: blur(15px);
     padding: 10px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+#front{
+    width: 33%;
+    height: 100%;
+    background-color: #4C4E4D;
+    overflow: hidden;
+    flex-grow: 1;
+
+}
+#back{
+    width: 33%;
+    height: 100%;
+    background-color: #4C4E4D;
+    overflow: hidden;
+    flex-grow: 1;
+
+}
+#shell{
+    width: 33%;
+    height: 100%;
+    background-color: #4C4E4D;
+    overflow: hidden;
+    flex-grow: 1;
+}
+#front, #back, #shell{
+    background-image: linear-gradient(to top, #212121, #373741, #4c4e63, #606789, #7282b0, #8595c4, #98a8d8, #acbced, #c5cbf1, #dadcf5, #eeedfa, #ffffff);
+    border-radius: 5px;
+}
+#front:hover, #back:hover, #shell:hover{
+    background-color: grey;
+    width: 100%;
 }
 a{
     color: #FFFFFF;
@@ -110,7 +139,6 @@ a{
 #cadrepresentation{
     height: 100%;
     width: 100%;
-    border: 1px solid red;
     position: relative;
     display: flex;
     justify-content: center;
