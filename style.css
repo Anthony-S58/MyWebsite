@@ -11,6 +11,7 @@
     background-position: center;
     background-size: cover;
 }
+
 nav{
     height: 80px;
     width: 100%;
@@ -21,6 +22,7 @@ nav{
     padding-inline-start: 50px;  
     position: fixed;
     box-shadow: 3px 2px 8px 2px rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 hr{
     height: 2px;
@@ -64,9 +66,42 @@ li{
 }
 li:hover{
     border-bottom: 2px solid rgba(170, 169, 169, 0.836);
+    cursor: pointer;
 }
 li.selected{
     border-bottom: 2px solid white;
+}
+#intro{
+    width: 50%;
+    height: 100%;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+    color: white;
+}
+#fullstack{
+    width: 50%;
+    height: 100%;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    color: white;
+}
+#containerfrontback{
+    width: 80%;
+    height: 60%;
+    border: 1px solid white;
+    border-radius: 5px;
+    backdrop-filter: blur(15px);
+    padding: 10px;
 }
 a{
     color: #FFFFFF;
