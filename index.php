@@ -1,3 +1,7 @@
+<?php
+    require_once('bddconnect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="Fr">
 <head>
@@ -64,8 +68,11 @@
         </div>
     </div>
     </section>
-    <section id="langages"></section>
-    
+    <section id="realisations">
+        <?php
+        echo 'test';
+        ?>
+    </section>
 
     <script src="https://kit.fontawesome.com/508ebce8fc.js"></script>
     <script src="app.js"></script>
