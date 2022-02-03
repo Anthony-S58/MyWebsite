@@ -79,9 +79,19 @@ li.selected{
     text-align: center;
     align-items: center;
     position: absolute;
+    flex-direction: column;
+    padding: 50px;
+    row-gap: 30px;
     left: 0px;
     color: white;
 }
+#photo{
+    height: 150px;
+    width: 150px;
+    border: 1px solid white;
+    border-radius: 150px;
+}
+
 #fullstack{
     width: 50%;
     height: 100%;
