@@ -38,28 +38,30 @@
                 <div id="front">
                     <div id="textfront">
                         <h4>Front End</h4>
-                        <div class="cadrelangages">
-
-                        </div>
+                    </div>
+                    <div class="cadrelangages">
+                        <div id="html"><i class="fab fa-html5"></i></div>
+                        <div id="css"><i class="fab fa-css3-alt"></i></div>
+                        <div id="javascript"><i class="fab fa-js"></i></div>
                     </div>
                 </div>
                 <div id="back">
                     <div id="textback">
                         <h4>Back End</h4>
-                        <div class="cadrelangages">
-
-                        </div>
+                    </div>
+                    <div class="cadrelangages">
+                        <div id="php"><i class="fab fa-php"></i></div>
+                        <div id="symfony"><i class="fab fa-symfony"></i></div>
                     </div>
                 </div>
                 <div id="tools">
                     <div id="texttools">
                         <h4>Outils Utilisés</h4>
-                        <div class="cadrelangages">
-
-                        </div>
+                    </div>
+                    <div class="cadrelangages">
+                        
                     </div>
                 </div>
-            </div>
         </div>
         <div id="social">
             <a href="https://github.com/Anthony-S58" target="_blank"><i class="fab fa-github"></i></a>

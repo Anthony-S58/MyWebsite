@@ -125,6 +125,24 @@ li.selected{
     font-size: 3em;
     transform: rotate(-90deg);
 }
+#html{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+}
+#css{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+}
+#javascript{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+}
 #back{
     width: 33%;
     height: 100%;
@@ -138,6 +156,18 @@ li.selected{
     color: black;
     font-size: 3em;
     transform: rotate(-90deg);
+}
+#php{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+}
+#symfony{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
 }
 #tools{
     width: 33%;
@@ -201,3 +231,6 @@ a{
 }
 
 
+#php{
+    color: black;
+}
