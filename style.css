@@ -59,7 +59,7 @@ li{
     align-items: center;
     color: #FFFFFF;
     font-weight: 50;
-    padding-inline: 20px;
+    padding-inline: 50px;
     height: 100%;
     letter-spacing: 2.7px;
 
@@ -107,7 +107,13 @@ li.selected{
     background-color: #4C4E4D;
     overflow: hidden;
     flex-grow: 1;
+    position: relative;
 
+}
+#textfront{
+    color: black;
+    font-size: 3em;
+    transform: rotate(-90deg);
 }
 #back{
     width: 33%;
@@ -115,7 +121,13 @@ li.selected{
     background-color: #4C4E4D;
     overflow: hidden;
     flex-grow: 1;
+    position: relative;
 
+}
+#textback{
+    color: black;
+    font-size: 3em;
+    transform: rotate(-90deg);
 }
 #tools{
     width: 33%;
@@ -123,6 +135,12 @@ li.selected{
     background-color: #4C4E4D;
     overflow: hidden;
     flex-grow: 1;
+    position: relative;
+}
+#texttools{
+    color: black;
+    font-size: 3em;
+    transform: rotate(-90deg);
 }
 #front, #back, #tools{
     background-image: linear-gradient(to top, #212121, #373741, #4c4e63, #606789, #7282b0, #8595c4, #98a8d8, #acbced, #c5cbf1, #dadcf5, #eeedfa, #ffffff);
@@ -130,6 +148,11 @@ li.selected{
     transition-property: width;
     transition-duration: 1s;
     transition-delay: 0s;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
     
 }
 
