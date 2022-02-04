@@ -99,6 +99,7 @@
             </div>
 
         </div>
+        <div id="cadredescriptprojet"></div>
     </section>
 
     <script src="https://kit.fontawesome.com/508ebce8fc.js"></script>
