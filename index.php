@@ -79,9 +79,14 @@
                         <li>Tous mes projets</li>
                         <li>Front-End</li>
                         <li>Back-End</li>
+                        <li>Jeux</li>
                     </ul>
                 </div>
                 <div id="projets">
+                    <div class="projet"></div>
+                    <div class="projet"></div>
+                    <div class="projet"></div>
+                    <div class="projet"></div>
                     <div class="projet"></div>
                     <div class="projet"></div>
                     <div class="projet"></div>
@@ -99,7 +104,20 @@
             </div>
 
         </div>
-        <div id="cadredescriptprojet"></div>
+        <div id="cadredescriptprojet">
+            <div id="projettexte">
+                <h2 id="nomprojet">Nom du projet</h2>
+                <p id="descriptprojet">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam laborum dolorum porro atque qui minima, quis suscipit accusantium voluptatum blanditiis aperiam ullam tenetur praesentium quos, recusandae tempore labore minus cum?
+                Quam nemo officia tenetur rerum sit, veniam, explicabo illo numquam cupiditate quibusdam accusamus. Sequi rem expedita commodi autem natus quasi maxime quaerat soluta porro. Ad similique temporibus incidunt laborum esse.</p>
+                <div id="langageprojet">
+                <i class="fab fa-html5"></i><i class="fab fa-html5"></i><i class="fab fa-html5"></i><i class="fab fa-html5"></i><i class="fab fa-html5"></i>
+                </div>
+            </div>
+            <div id="projetimage">
+                
+                <div id="cadreimage"></div>
+            </div>
+        </div>
     </section>
 
     <script src="https://kit.fontawesome.com/508ebce8fc.js"></script>
