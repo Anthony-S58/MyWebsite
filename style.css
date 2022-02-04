@@ -228,6 +228,46 @@ a{
     width: 100%;
     height: 100vh;
     color: black;
+    background-color: #373741;
+}
+#titrerealisations{
+    color: white;
+    padding-top: 150px;
+    padding-inline: 50px;
+    font-size: 3em;
+}
+#cadrerealisations{
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+}
+#projetscontainer{
+    width: 50%;
+    height: 700px;
+    border: 1px solid blue;
+}
+#links{
+    margin-top: 50px;
+    width: 700px;
+    height: 80px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+}
+#projets{
+    overflow: hidden;
+    width: 700px;
+    height: 570px;
+    background-color: #acbced;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.projet{
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
 }
 
 

@@ -71,9 +71,34 @@
     </div>
     </section>
     <section id="realisations">
-        <?php
-        echo 'test';
-        ?>
+        <div id="cadrerealisations">
+            <h1 id="titrerealisations">Réalisations</h1>
+            <div id="projetscontainer">
+                <div id="links">
+                    <ul>
+                        <li>Tous mes projets</li>
+                        <li>Front-End</li>
+                        <li>Back-End</li>
+                    </ul>
+                </div>
+                <div id="projets">
+                    <div class="projet"></div>
+                    <div class="projet"></div>
+                    <div class="projet"></div>
+                    <div class="projet"></div>
+                    <div class="projet"></div>
+                    <div class="projet"></div>
+                    <div class="projet"></div>
+                    <div class="projet"></div>
+                    <div class="projet"></div>
+                    <div class="projet"></div>
+                    <div class="projet"></div>
+                    <div class="projet"></div>
+
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <script src="https://kit.fontawesome.com/508ebce8fc.js"></script>
