@@ -123,7 +123,16 @@
 
     </section>
     <section id="contact">
-        
+        <div id="contactcontainer">
+            <form method="">
+                <input type="email" name="email" id="email" placeholder="Mail" required>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+        <footer>
+            
+        </footer>
     </section>
 
     <script src="https://kit.fontawesome.com/508ebce8fc.js"></script>
