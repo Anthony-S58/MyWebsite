@@ -119,6 +119,12 @@
             </div>
         </div>
     </section>
+    <section id="passion">
+
+    </section>
+    <section id="contact">
+        
+    </section>
 
     <script src="https://kit.fontawesome.com/508ebce8fc.js"></script>
     <script src="app.js"></script>
