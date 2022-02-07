@@ -105,6 +105,10 @@
 
         </div>
         <div id="cadredescriptprojet">
+            <div id="projetimage">
+                
+                <div id="cadreimage"></div>
+            </div>
             <div id="projettexte">
                 <h2 id="nomprojet">Nom du projet</h2>
                 <p id="descriptprojet">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam laborum dolorum porro atque qui minima, quis suscipit accusantium voluptatum blanditiis aperiam ullam tenetur praesentium quos, recusandae tempore labore minus cum?
@@ -112,10 +116,6 @@
                 <div id="langageprojet">
                 <i class="fab fa-html5"></i><i class="fab fa-html5"></i><i class="fab fa-html5"></i><i class="fab fa-html5"></i><i class="fab fa-html5"></i>
                 </div>
-            </div>
-            <div id="projetimage">
-                
-                <div id="cadreimage"></div>
             </div>
         </div>
     </section>
