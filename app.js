@@ -4,7 +4,6 @@ let front = document.querySelector("#front");
 let back = document.querySelector("#back");
 let tools = document.querySelector("#tools");
 
-
 let textfront = document.querySelector("#textfront");
 let textback = document.querySelector("#textback");
 let texttools = document.querySelector("#texttools");

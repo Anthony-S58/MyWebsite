@@ -69,6 +69,7 @@ li{
 li:hover{
     border-bottom: 2px solid rgba(170, 169, 169, 0.836);
     cursor: pointer;
+    transition: 2s;
 }
 li.selected{
     border-bottom: 2px solid white;
@@ -375,6 +376,9 @@ input{
     width: 300px;
     height: 40px;
 }
+input:hover, textarea:hover, button:hover{
+    border-color: #4c4e63;
+}
 textarea{
     margin-top: 30px;
     resize: none;
@@ -385,6 +389,7 @@ textarea{
     color: white;
     border: 2px solid rgb(0, 174, 255);
 }
+
 form{
     display: flex;
     justify-content: center;
