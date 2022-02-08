@@ -125,8 +125,10 @@
     <section id="contact">
         <div id="contactcontainer">
             <form method="">
-                <input type="email" name="email" id="email" placeholder="Mail" required>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                <input  class="__forminput" type="email" name="email" placeholder="" required>
+                <label for="email" id="email">Mail</label>
+                <textarea class="__formtextarea" cols="30" rows="10" placeholder=""></textarea>
+                <label for="textarea" id="textarea">Message</label>
                 <button type="submit">Envoyer</button>
             </form>
         </div>

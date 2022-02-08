@@ -375,11 +375,44 @@ input{
     color: white;
     width: 300px;
     height: 40px;
+    position: relative;
 }
+#email{
+    position: absolute;
+    top: 150px;
+    left: 120px;
+    color: white;
+}
+input:focus ~ #email{
+    background-color: black;
+    top: 130px;
+    left: 110px;
+    font-size: 0.9rem;
+    transition: top 200ms ease-in,
+    left 200ms ease-in,
+    font-size 200ms ease-in;
+}
+#textarea{
+    position: absolute;
+    top: 245px;
+    left: 120px;
+    color: white;
+}
+textarea:focus ~ #textarea{
+    background-color: black;
+    top: 220px ;
+    left: 110px ;
+    font-size: 0.9rem;
+    transition: top 200ms ease-in,
+    left 200ms ease-in,
+    font-size 200ms ease-in;
+}
+
+
 input:hover, textarea:hover, button:hover{
     border-color: #4c4e63;
 }
-textarea{
+.__formtextarea{
     margin-top: 30px;
     resize: none;
     width: 300px;
@@ -388,6 +421,9 @@ textarea{
     background-color: black;
     color: white;
     border: 2px solid rgb(0, 174, 255);
+}
+form input:focus ~ form ::placeholder{
+    top: -0.5rem;
 }
 
 form{
