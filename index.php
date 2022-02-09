@@ -133,7 +133,7 @@
             </form>
         </div>
         <footer>
-            
+            <a href="admin.php">lien vers admin</a>
         </footer>
     </section>
 
