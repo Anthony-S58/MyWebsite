@@ -7,7 +7,6 @@
             header('location:connexion.php');
         };
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,6 +16,6 @@
     <title>Espace Administrateur</title>
 </head>
 <body>
-    
+    <a href="disconnect.php">Déconnexion</a>
 </body>
 </html>

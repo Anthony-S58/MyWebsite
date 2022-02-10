@@ -133,9 +133,7 @@
             </form>
         </div>
         <footer>
-            <a href="admin.php">lien vers admin</a>
-            <a href="register.php">lien vers inscription</a>
-            <a href="connexion.php">lien vers connexion</a>
+            
         </footer>
     </section>
 
