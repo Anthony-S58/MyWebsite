@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    require_once('bddconnect.php');
+        if(isset($_SESSION['admin'])){
+            $user = $_SESSION['admin'];
+        }else{
+            header('location:connexion.php');
+        };
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
