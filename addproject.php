@@ -9,7 +9,7 @@
 
     if ($_POST) {
 
-    if(isset($_POST['name']) && !empty($_POST['name'])  
+    if(isset($_POST['title']) && !empty($_POST['title'])  
     && isset($_POST['description']) && !empty($_POST['description'])
     && isset($_POST['html']) 
     && isset($_POST['css'])
@@ -17,22 +17,22 @@
     && isset($_POST['php']) 
     && isset($_POST['mysql'])
     && isset($_POST['symfony'])
-    && isset($_POST['website'])
-    && isset($_POST['github'])
+    && isset($_POST['website']) && !empty($_POST['website'])
+    && isset($_POST['github']) && !empty($_POST['github'])
     && isset($_POST['front'])
     && isset($_POST['back'])
     && isset($_POST['jeux'])){
     
-    // if(isset($_FILES['image'])){
-    //         $tmpName = $_FILES['image']['tmp_name'];
-    //         $name = $_FILES['image']['name'];
-    //         if(empty($name)){
-    //             $name = ('uploads/pasdimage.png');
-    //         }
+    if(isset($_FILES['image'])){
+            $tmpName = $_FILES['image']['tmp_name'];
+            $name = $_FILES['image']['name'];
+            if(empty($name)){
+                $name = ('uploads/pasdimage.png');
+            }
 
-        //     move_uploaded_file($tmpName, 'IMG/'.$name);
-        // }
-        $name = strip_tags($_POST['name']);
+            move_uploaded_file($tmpName, 'IMG/'.$name);
+        }
+        $title = strip_tags($_POST['title']);
         $description = strip_tags($_POST['description']);
         $html = ($_POST['html']);
         $css = ($_POST['css']);
@@ -45,13 +45,13 @@
         $front = ($_POST['front']);
         $back = ($_POST['back']);
         $jeux = ($_POST['jeux']);
-        // $image = strip_tags($_FILES['image']['name']);
+        $image = strip_tags($_FILES['image']['name']);
 
 
-        $sql = "INSERT INTO projets(name, image, description, html, css, javascript, php, mysql, symfony, website, github, front, back, jeux) VALUES (:name, :image, :description, :html, :css, :javascript, :php, :mysql, :symfony, :website, :github, :front, :back, :jeux)";
+        $sql = "INSERT INTO projets(title, image, description, html, css, javascript, php, mysql, symfony, website, github, front, back, jeux) VALUES (:title, :image, :description, :html, :css, :javascript, :php, :mysql, :symfony, :website, :github, :front, :back, :jeux)";
         $query = $bdd->prepare($sql);
         
-        $query->bindValue(':name', $name);
+        $query->bindValue(':title', $title);
         $query->bindValue(':image', $image);
         $query->bindValue(':description', $description);
         $query->bindValue(':html', $html);
@@ -97,7 +97,7 @@
         <h2>Ajouter un projet</h2>
     </div>
     <form action="" method="POST" enctype="multipart/form-data">        
-        <input type="text" name="name" placeholder="name" required><br>
+        <input type="text" name="title" placeholder="title" required><br>
         <input type="file" name="image" placeholder="file"><br><br>
         <textarea type="text" name="description" placeholder="description" id="describ"></textarea><br>
         <input type="radio" name="html"><label for="html">html</label>
