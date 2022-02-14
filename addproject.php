@@ -48,7 +48,7 @@
         $image = strip_tags($_FILES['image']['name']);
 
 
-        $sql = "INSERT INTO projets(title, image, description, html, css, javascript, php, mysql, symfony, website, github, front, back, jeux) VALUES (:title, :image, :description, :html, :css, :javascript, :php, :mysql, :symfony, :website, :github, :front, :back, :jeux)";
+        $sql = "INSERT INTO projets(id, title, image, description, html, css, javascript, php, mysql, symfony, website, github, front, back, jeux) VALUES ( ,:title, :image, :description, :html, :css, :javascript, :php, :mysql, :symfony, :website, :github, :front, :back, :jeux)";
         $query = $bdd->prepare($sql);
         
         $query->bindValue(':title', $title);
@@ -96,23 +96,67 @@
     <div class="categories">
         <h2>Ajouter un projet</h2>
     </div>
-    <form action="" method="POST" enctype="multipart/form-data">        
+    <form action="" method="POST" enctype="multipart/form-data">  
+        <input type="hidden" name="id">      
         <input type="text" name="title" placeholder="title" required><br>
         <input type="file" name="image" placeholder="file"><br><br>
         <textarea type="text" name="description" placeholder="description" id="describ"></textarea><br>
-        <input type="radio" name="html"><label for="html">html</label>
-        <input type="radio" name="css"><label for="css">css</label>
-        <input type="radio" name="javascript"><label for="javascript">javascript</label>
-        <input type="radio" name="php"><label for="php">php</label>
-        <input type="radio" name="mysql"><label for="mysql">mysql</label>
-        <input type="radio" name="symfony"><label for="symfony">symfony</label>
-        <input type="radio" name="front"><label for="front">front</label>
-        <input type="radio" name="back"><label for="back">back</label>
-        <input type="radio" name="jeux"><label for="jeux">jeux</label>
+        <div>
+            <label>HTML :</label>
+            <label><input name="html" type="radio" checked value="oui">oui</label>
+            <label><input name="html" type="radio" value="non">non</label>
+        </div>
+        <!-- <input type="radio" name="html"><label for="html">html</label> -->
+        <div>
+            <label>CSS :</label>
+            <label><input name="css" type="radio" checked value="oui">oui</label>
+            <label><input name="css" type="radio" value="non">non</label>
+        </div>
+        <!-- <input type="radio" name="css"><label for="css">css</label> -->
+        <div>
+            <label>Javascript :</label>
+            <label><input javascript="Afficher" type="radio" checked value="oui">oui</label>
+            <label><input javascript="Afficher" type="radio" value="non">non</label>
+        </div>
+        <!-- <input type="radio" name="javascript"><label for="javascript">javascript</label> -->
+        <div>
+            <label>PHP :</label>
+            <label><input name="php" type="radio" checked value="oui">oui</label>
+            <label><input name="php" type="radio" value="non">non</label>
+        </div>
+        <!-- <input type="radio" name="php"><label for="php">php</label> -->
+        <div>
+            <label>MYSQL :</label>
+            <label><input name="mysql" type="radio" checked value="oui">oui</label>
+            <label><input name="mysql" type="radio" value="non">non</label>
+        </div>
+        <!-- <input type="radio" name="mysql"><label for="mysql">mysql</label> -->
+        <div>
+            <label>Symfony :</label>
+            <label><input name="symfony" type="radio" checked value="oui">oui</label>
+            <label><input name="symfony" type="radio" value="non">non</label>
+        </div>
         <input type="text" name="website" placeholder="url site web" id="website"></textarea><br>
         <input type="text" name="github" placeholder="url github" id="github"></textarea><br>
-
-        
+        <!-- <input type="radio" name="symfony"><label for="symfony">symfony</label> -->
+        <div>
+            <label>Front :</label>
+            <label><input name="front" type="radio" checked value="oui">oui</label>
+            <label><input name="front" type="radio" value="non">non</label>
+        </div>
+        <!-- <input type="radio" name="front"><label for="front">front</label> -->
+        <div>
+            <label>Back :</label>
+            <label><input name="back" type="radio" checked value="oui">oui</label>
+            <label><input name="back" type="radio" value="non">non</label>
+        </div>
+        <!-- <input type="radio" name="back"><label for="back">back</label> -->
+        <div>
+            <label>Jeux :</label>
+            <label><input name="jeux" type="radio" checked value="oui">oui</label>
+            <label><input name="jeux" type="radio" value="non">non</label>
+        </div>
+        <!-- <input type="radio" name="jeux"><label for="jeux">jeux</label> -->
             
         <input type="submit" name="submit"value="Ajouter" class="submit">
         
