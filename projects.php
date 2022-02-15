@@ -51,7 +51,7 @@ while ($donnees = $reponse ->fetch()) {
         <a href="<?php echo $donnees['github']?>" target="_blank"><button>github</button></a>
         <div class="buttonproject">
             <button>Modifier</button>
-            <button>Supprimer</button>
+            <button onclick="return confirm('voulez-vous supprimer ce projet?')"><a href="delete.php?ID=<?php echo $donnees['id']?>">Supprimer</a></button>
         </div>
     </div>
     
