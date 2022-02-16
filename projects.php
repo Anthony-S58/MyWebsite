@@ -39,7 +39,21 @@ while ($donnees = $reponse ->fetch()) {
     <div class="project">
 
         <div class="projecttitre"><h3><?php echo $donnees['title'].'</h3><br>'?></div>
-        <div class="projectimg"><img src="uploads/<?=$donnees['image']?>" width="auto" height="auto" alt=""></div>
+        <div class="projectimg">
+            <?php
+            if( !empty($donnees['image'])){
+                ?>
+                <img src="uploads/<?=$donnees['image']?>" width="auto" height="auto" alt="">
+                <?php
+            }else{
+                ?>
+                <img src="IMG/pasdimage.png" width="auto" height="auto" alt=""> 
+                <?php
+            };
+            ?>
+            
+
+        </div>
         <div class="projectdescript"><p><?php echo $donnees['description'].'</p><br>'?></div>
         <h4>Langages utilisés</h4>
         <div id="langages">

@@ -26,8 +26,8 @@ if(isset($_POST['title']) && !empty($_POST['title'])
     if(isset($_FILES['image'])){
             $tmpName = $_FILES['image']['tmp_name'];
             $name = $_FILES['image']['name'];
-            if(empty($name)){
-                $name = ('IMG/pasdimage.png');
+            if(empty($_FILES['image'])){
+                $name = ('../IMG/pasdimage.png');
             }
 
             move_uploaded_file($tmpName, 'uploads/'.$name);
