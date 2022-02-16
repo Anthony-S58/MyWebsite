@@ -26,11 +26,11 @@ if(isset($_POST['title']) && !empty($_POST['title'])
     if(isset($_FILES['image'])){
             $tmpName = $_FILES['image']['tmp_name'];
             $name = $_FILES['image']['name'];
-            // if(empty($name)){
-            //     $name = ('uploads/pasdimage.png');
-            // }
+            if(empty($name)){
+                $name = ('IMG/pasdimage.png');
+            }
 
-            move_uploaded_file($tmpName, 'IMG/'.$name);
+            move_uploaded_file($tmpName, 'uploads/'.$name);
         }
         $title = strip_tags($_POST['title']);
         $image = strip_tags($_FILES['image']['name']);

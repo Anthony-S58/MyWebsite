@@ -38,20 +38,39 @@ while ($donnees = $reponse ->fetch()) {
 ?>
     <div class="project">
 
-        <div class="projectimg"></div>
         <div class="projecttitre"><h3><?php echo $donnees['title'].'</h3><br>'?></div>
+        <div class="projectimg"><img src="uploads/<?=$donnees['image']?>" width="auto" height="auto" alt=""></div>
         <div class="projectdescript"><p><?php echo $donnees['description'].'</p><br>'?></div>
         <h4>Langages utilisés</h4>
-<?php
-        if ($donnees['html']=='oui'){
-            echo '<a><i class="fab fa-html5"></i></a>';
-        }else{};
-?>
-        <a href="<?php echo $donnees['website']?>" target="_blank"><button>site web</button></a>
-        <a href="<?php echo $donnees['github']?>" target="_blank"><button>github</button></a>
+        <div id="langages">
+            <?php
+                if ($donnees['html']=='oui'){
+                    echo '<br><img src="IMG/icons/htmlicon.png" alt="" width="30px" height="30px"><br>';
+                }else{};
+                if ($donnees['css']=='oui'){
+                    echo '<br><img src="IMG/icons/cssicon.png" alt="" width="30px" height="30px"><br>';
+                }else{};
+                if ($donnees['javascript']=='oui'){
+                    echo '<br><img src="IMG/icons/jsicon.png" alt="" width="30px" height="30px"><br>';
+                }else{};
+                if ($donnees['php']=='oui'){
+                    echo '<br><img src="IMG/icons/phpicon.png" alt="" width="30px" height="30px"><br>';
+                }else{};
+                if ($donnees['mysql']=='oui'){
+                    echo '<br><img src="IMG/icons/mysqlicon.png" alt="" width="30px" height="30px"><br>';
+                }else{};
+                if ($donnees['symfony']=='oui'){
+                    echo '<br><img src="IMG/icons/symfonyicon.png" alt="" width="30px" height="30px"><br>';
+                }else{};
+            ?>
+        </div>
+        <div class="linkproject">
+            <a href="<?php echo $donnees['website']?>" target="_blank" title="<?php echo $donnees['website']?>"><button>site web</button></a>
+            <a href="<?php echo $donnees['github']?>" target="_blank" title="<?php echo $donnees['github']?>"><button>github</button></a>
+        </div>
         <div class="buttonproject">
-            <button>Modifier</button>
-            <button onclick="return confirm('voulez-vous supprimer ce projet?')"><a href="delete.php?ID=<?php echo $donnees['id']?>">Supprimer</a></button>
+            <button class="modif">Modifier</button>
+            <button class="sup" onclick="return confirm('voulez-vous supprimer ce projet?')"><a href="delete.php?ID=<?php echo $donnees['id']?>">Supprimer</a></button>
         </div>
     </div>
     
