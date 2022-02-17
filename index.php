@@ -1,6 +1,11 @@
 <?php
     require_once('bddconnect.php');
 ?>
+<?php
+     // Récupérer les données
+ $reponse = $bdd->query('SELECT * FROM projets');
+
+ ?>
 
 <!DOCTYPE html>
 <html lang="Fr">
@@ -72,8 +77,10 @@
     </section>
     <section id="realisations">
         <div id="cadrerealisations">
-            <h1 id="titrerealisations">Réalisations</h1>
             <div id="projetscontainer">
+                <div id="titrerealisations">
+                    <h1>Réalisations</h1>
+                </div>
                 <div id="links">
                     <ul>
                         <li>Tous mes projets</li>
@@ -83,40 +90,45 @@
                     </ul>
                 </div>
                 <div id="projets">
-                    <div class="projet"></div>
-                    <div class="projet"></div>
-                    <div class="projet"></div>
-                    <div class="projet"></div>
-                    <div class="projet"></div>
-                    <div class="projet"></div>
-                    <div class="projet"></div>
-                    <div class="projet"></div>
-                    <div class="projet"></div>
-                    <div class="projet"></div>
-                    <div class="projet"></div>
-                    <div class="projet"></div>
-                    <div class="projet"></div>
-                    <div class="projet"></div>
-                    <div class="projet"></div>
-                    <div class="projet"></div>
-
+                <?php
+                    while ($donnees = $reponse ->fetch()) {
+                ?>
+                    <div class="projet">
+                    <?php
+                        if( !empty($donnees['image'])){
+                            ?>
+                            <img src="uploads/<?=$donnees['image']?>" width="auto" height="auto" alt="<?=$donnees['title']?>" title="<?=$donnees['title']?>">
+                            <?php
+                        }else{
+                    ?>
+                        <img src="IMG/pasdimage.png" width="auto" height="auto" alt="<?=$donnees['title']?>" title="<?=$donnees['title']?>"> 
+                    <?php
+                        };
+                    ?>
+                    </div>
+                <?php
+                    }
+                ?>
                 </div>
             </div>
 
         </div>
         <div id="cadredescriptprojet">
-            <div id="projetimage">
-                
+            
+            <div id="nomprojet"><h2>Nom du projet</h2></div>
                 <div id="cadreimage"></div>
-            </div>
-            <div id="projettexte">
-                <h2 id="nomprojet">Nom du projet</h2>
-                <p id="descriptprojet">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam laborum dolorum porro atque qui minima, quis suscipit accusantium voluptatum blanditiis aperiam ullam tenetur praesentium quos, recusandae tempore labore minus cum?
-                Quam nemo officia tenetur rerum sit, veniam, explicabo illo numquam cupiditate quibusdam accusamus. Sequi rem expedita commodi autem natus quasi maxime quaerat soluta porro. Ad similique temporibus incidunt laborum esse.</p>
+            
+                <div id="descriptprojet">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam laborum dolorum porro atque qui minima, quis suscipit accusantium voluptatum blanditiis aperiam ullam tenetur praesentium quos, recusandae tempore labore minus cum?
+                    Quam nemo officia tenetur rerum sit, veniam, explicabo illo numquam cupiditate quibusdam accusamus. Sequi rem expedita commodi autem natus quasi maxime quaerat soluta porro. Ad similique temporibus incidunt laborum esse.</p>
+                </div>
                 <div id="langageprojet">
                 <i class="fab fa-html5"></i><i class="fab fa-html5"></i><i class="fab fa-html5"></i><i class="fab fa-html5"></i><i class="fab fa-html5"></i>
                 </div>
-            </div>
+                <div id="buttonsproject">
+                    <button class="web">site web</button>
+                    <button class="git">github</button>
+                </div>
         </div>
     </section>
     <section id="passion">
