@@ -81,10 +81,8 @@ if(isset($_POST['title']) && !empty($_POST['title'])
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/index.css">
-    <link rel="stylesheet" href="../CSS/responsive.css">
-    <link rel="stylesheet" href="../CSS/connect.css">
-    <title>Portfolio - Ajout Projet</title>
+    
+    <title>Ajout Projet</title>
 </head>
 
 <body>
