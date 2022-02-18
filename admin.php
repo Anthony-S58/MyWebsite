@@ -19,6 +19,7 @@
 <body>
     <section id="admindashboard">
         <h1>Bienvenue <?php echo $user ?></h1>
+        <div id="cadremeteo"></div>
         <div id="cadredashboard">
             <div id="addproject">
                 <div id="add"><i class="fa fa-plus"></i></div>
