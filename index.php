@@ -1,6 +1,7 @@
 <?php
     require_once('bddconnect.php');
 ?>
+
 <?php
      // Récupérer les données
  $reponse = $bdd->query('SELECT * FROM projets');
@@ -136,14 +137,42 @@
     </section>
     <section id="contact">
         <div id="contactcontainer">
-            <form method="">
+            <form action="" method="POST">
                 <input  class="__forminput" type="email" name="email" placeholder="" required>
                 <label for="email" id="email">Mail</label>
-                <textarea class="__formtextarea" cols="30" rows="10" placeholder=""></textarea>
-                <label for="textarea" id="textarea">Message</label>
+                <textarea class="__formtextarea" cols="30" name="message" rows="10" placeholder=""></textarea>
+                <label for="message" id="textarea">Message</label>
                 <button type="submit">Envoyer</button>
             </form>
+
+
         </div>
+            <?php
+
+    ob_start();
+
+    $email=HTMLSpecialChars($_POST['email']);
+    $message=HTMLSpecialChars($_POST['message']);
+
+    if (isset($_POST['message'])) {
+        $position_arobase = strpos($_POST['email'], '@');
+        if ($position_arobase === false)
+            echo '<p>Votre email doit comporter un arobase.</p>';
+        else {
+            $retour = mail('a.simonneau@codeur.online', 'Envoi depuis la page Contact', $_POST['message'], 'From: ' . $_POST['email']);
+
+            if($retour){
+            echo '<p>Votre message a été envoyé.</p>';
+            // header('Refresh: 3; url="index.php"');
+            ob_flush();
+        }
+
+            else
+                echo '<p>Erreur.</p>';
+        }
+    }
+    ?>
+
         <footer>
             
         </footer>
