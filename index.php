@@ -1,6 +1,31 @@
 <?php
     require_once('bddconnect.php');
 ?>
+     <?php
+
+ob_start();
+
+// $email=HTMLSpecialChars($_POST['email']);
+// $message=HTMLSpecialChars($_POST['message']);
+
+if (isset($_POST['message'])) {
+    $position_arobase = strpos($_POST['email'], '@');
+    if ($position_arobase === false)
+        echo '<p>Votre email doit comporter un arobase.</p>';
+    else {
+        $retour = mail('a.simonneau@codeur.online', 'Envoi depuis la page Contact', $_POST['message'], 'From: ' . $_POST['email']);
+
+        if($retour){
+        echo '<p>Votre message a été envoyé.</p>';
+        // header('Refresh: 3; url="index.php"');
+        ob_flush();
+    }
+
+        else
+            echo '<p>Erreur.</p>';
+    }
+}
+?>
 
 <?php
      // Récupérer les données
@@ -77,59 +102,67 @@
     </div>
     </section>
     <section id="realisations">
-        <div id="cadrerealisations">
-            <div id="projetscontainer">
-                <div id="titrerealisations">
-                    <h1>Réalisations</h1>
-                </div>
-                <div id="links">
-                    <ul>
-                        <li>Tous mes projets</li>
-                        <li>Front-End</li>
-                        <li>Back-End</li>
-                        <li>Jeux</li>
-                    </ul>
-                </div>
-                <div id="projets">
-                <?php
-                    while ($donnees = $reponse ->fetch()) {
-                ?>
-                    <div class="projet">
+    <?php
+        // Récupérer les données
+        $reponse = $bdd->query('SELECT * FROM projets');
+    ?>
+        <h2>Réalisations</h2>
+        <div id="cadreprojets">
+        <?php
+            while ($donnees = $reponse ->fetch()) {
+        ?>      
+            <div id="projet">
+                <div id="projetimage">
                     <?php
                         if( !empty($donnees['image'])){
                             ?>
-                            <img src="uploads/<?=$donnees['image']?>" width="auto" height="auto" alt="<?=$donnees['title']?>" title="<?=$donnees['title']?>">
+                            <img src="uploads/<?=$donnees['image']?>" width="auto" height="auto" alt="">
                             <?php
                         }else{
-                    ?>
-                        <img src="IMG/pasdimage.png" width="auto" height="auto" alt="<?=$donnees['title']?>" title="<?=$donnees['title']?>"> 
-                    <?php
+                            ?>
+                            <img src="IMG/pasdimage.png" width="auto" height="auto" alt=""> 
+                            <?php
                         };
                     ?>
+                </div>
+                <div id="projettexte">
+                    <div id="projettitre">
+                        <h3><?php echo $donnees['title'].'</h3><br>'?></h3>
                     </div>
-                <?php
-                    }
-                ?>
+                    <div id="projetdescription">
+                        <p><?php echo $donnees['description'].'</p><br>'?></p>
+                    </div>
+                    <div id="projetlanguage">
+                    <?php
+                        if ($donnees['html']=='oui'){
+                            echo '<br><img src="IMG/icons/htmlicon.png" alt="" width="30px" height="30px"><br>';
+                        }else{};
+                        if ($donnees['css']=='oui'){
+                            echo '<br><img src="IMG/icons/cssicon.png" alt="" width="30px" height="30px"><br>';
+                        }else{};
+                        if ($donnees['javascript']=='oui'){
+                            echo '<br><img src="IMG/icons/jsicon.png" alt="" width="30px" height="30px"><br>';
+                        }else{};
+                        if ($donnees['php']=='oui'){
+                            echo '<br><img src="IMG/icons/phpicon.png" alt="" width="30px" height="30px"><br>';
+                        }else{};
+                        if ($donnees['mysql']=='oui'){
+                            echo '<br><img src="IMG/icons/mysqlicon.png" alt="" width="30px" height="30px"><br>';
+                        }else{};
+                        if ($donnees['symfony']=='oui'){
+                            echo '<br><img src="IMG/icons/symfonyicon.png" alt="" width="30px" height="30px"><br>';
+                        }else{};
+                    ?>
+                    </div>
+                    <div id="projetlinks">
+                        <a href="<?php echo $donnees['website']?>" target="_blank" title="<?php echo $donnees['website']?>"><button>site web</button></a>
+                        <a href="<?php echo $donnees['github']?>" target="_blank" title="<?php echo $donnees['github']?>"><button>github</button></a>
+                    </div>
                 </div>
             </div>
-
-        </div>
-        <div id="cadredescriptprojet">
-            
-            <div id="nomprojet"><h2>Nom du projet</h2></div>
-                <div id="cadreimage"></div>
-            
-                <div id="descriptprojet">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam laborum dolorum porro atque qui minima, quis suscipit accusantium voluptatum blanditiis aperiam ullam tenetur praesentium quos, recusandae tempore labore minus cum?
-                    Quam nemo officia tenetur rerum sit, veniam, explicabo illo numquam cupiditate quibusdam accusamus. Sequi rem expedita commodi autem natus quasi maxime quaerat soluta porro. Ad similique temporibus incidunt laborum esse.</p>
-                </div>
-                <div id="langageprojet">
-                <i class="fab fa-html5"></i><i class="fab fa-html5"></i><i class="fab fa-html5"></i><i class="fab fa-html5"></i><i class="fab fa-html5"></i>
-                </div>
-                <div id="buttonsproject">
-                    <button class="web">site web</button>
-                    <button class="git">github</button>
-                </div>
+        <?php
+            }
+        ?>
         </div>
     </section>
     <section id="passion">
@@ -147,31 +180,7 @@
 
 
         </div>
-            <?php
-
-    ob_start();
-
-    $email=HTMLSpecialChars($_POST['email']);
-    $message=HTMLSpecialChars($_POST['message']);
-
-    if (isset($_POST['message'])) {
-        $position_arobase = strpos($_POST['email'], '@');
-        if ($position_arobase === false)
-            echo '<p>Votre email doit comporter un arobase.</p>';
-        else {
-            $retour = mail('a.simonneau@codeur.online', 'Envoi depuis la page Contact', $_POST['message'], 'From: ' . $_POST['email']);
-
-            if($retour){
-            echo '<p>Votre message a été envoyé.</p>';
-            // header('Refresh: 3; url="index.php"');
-            ob_flush();
-        }
-
-            else
-                echo '<p>Erreur.</p>';
-        }
-    }
-    ?>
+       
 
         <footer>
             

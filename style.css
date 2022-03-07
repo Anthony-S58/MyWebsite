@@ -232,135 +232,93 @@ a{
     width: 100%;
     height: 100vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: #212121;
 }
-#cadrerealisations{
-    height: 100%;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+#realisations h2{
+    color: white;
+    padding: 50px;
 }
-
-#projetscontainer{
-    padding-top: 100px;
-    height: 100%;
+#cadreprojets{
+    height: auto;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    background-color: transparent;
-}
-#titrerealisations{
-    color: #FFFFFF;
-    font-size: 2em;
-    padding-inline:20px;
-}
-#links{
-    margin-top: 100px;
-    height: 80px;
-    width: 100%;
+    border: 1px solid red;
+    min-height: 70vh;
     display: flex;
     justify-content: space-around;
-    flex-direction: row;
-}
-#links li{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-#projets{
-    height: 600px;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
     flex-wrap: wrap;
-    padding: 0px 20px 20px 20px;
-    row-gap: 20px;
-    column-gap: 10px;
+    flex-direction: row;
     overflow-y: scroll;
-    padding-top: 50px;
+    row-gap: 50px;
+    column-gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
 }
-.projet{
-    border: 1px solid black;
-    height: 150px;
-    width: 150px;
-    overflow: hidden;
+#projet{
+    width: 300px;
+    height: auto;
+    border: 1px solid white;
 }
-.projet img{
+#projetimage{
+    width: 100%;
+    height: 200px;
+    border: 1px solid red;
+}
+#projetimage img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.projet:hover{
-    border: 1px solid rgb(0, 174, 255);
-}
-
-#cadredescriptprojet{
-    height: 100%;
-    width: 70%;
-    background-color: #212121;
-    display: flex;
+#projettexte{
+    display: none;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-top: 100px;
-}
-#cadreimage{
-    width: 500px;
-    height: 350px;
-    border: 1px solid white;
-    
-}
-#nomprojet{
-    display:flex;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    padding-bottom: 10px;
-    
-}
-#descriptprojet{
-    margin-top: 10px;
-    height: auto;
-    width: 100%;
     padding: 10px;
-    padding-inline: 30px;
-    color: white;
-    letter-spacing: 2px;
+    border: 1px solid white;
+    width: 300px;
+    height: 280px;
 }
-
-#langageprojet{
+#projettitre{
+    color: white;
+}
+#projetdescription{
+    color: white;
+    margin-top: 10px;
     width: 100%;
-    height: 100px;
+    height: 90px;
+    border: 1px solid red;
+    padding-inline: 5px;
+
+}
+#projetlanguage{
+    height: 50px;
+    width: 100%;
+    border: 1px solid red;
+    margin-top: 10px;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    font-size: 3em;
-    color: white;
-}
-#buttonsproject{
-    width: 100%;
-    height: 100px;
-    column-gap: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: row;
+    align-items: center;
 }
-.web, .git{
-    width: 80px;
-    height: 80px;
-    border-radius: 80px;
-    margin-top: 50px;
+#projetlinks{
+    height: 50px;
+    width: 100%;
+    border: 1px solid red;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
 }
-
+#web{
+    width: 100px;
+    height: 30px;
+}
+#git{
+    width: 100px;
+    height: 30px;
+}
 #passion{
     width: 100%;
     height: 100vh;
