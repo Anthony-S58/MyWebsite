@@ -50,8 +50,8 @@ if (isset($_POST['message'])) {
         <div id="navigation">
             <ul>
                 <li href="#" class="selected">A Propos</li>
+                <li><a href="#">Mes Skills</a></li>
                 <li><a href="#">Mes Réalisations</a></li>
-                <li><a href="#">Mes Passions</a></li>
                 <li><a href="#">Me contacter</a></li>
             </ul>
         </div>
@@ -101,73 +101,89 @@ if (isset($_POST['message'])) {
         </div>
     </div>
     </section>
+
+    <section id="skills">
+            <h2>Mes skills</h2>
+            <div class="langagetitle">
+                <h3>Les langages que j'utilise</h3>
+            </div>
+            <div class="skillcontainer">
+
+            </div>
+            <div class="space"></div>
+            <div class="progtitle">
+                <h3>Les programmes que j'utilise</h3>
+            </div>
+            <div class="skillcontainer">
+
+            </div>
+    </section>
+
     <section id="realisations">
     <?php
         // Récupérer les données
-        $reponse = $bdd->query('SELECT * FROM projets');
+        $reponse = $bdd->query('SELECT * FROM projets ORDER BY id DESC');
     ?>
         <h2>Réalisations</h2>
         <div id="cadreprojets">
         <?php
-            while ($donnees = $reponse ->fetch()) {
+            while ($donnees = $reponse -> fetch()) {
         ?>      
             <div id="projet">
                 <div id="projetimage">
                     <?php
                         if( !empty($donnees['image'])){
                             ?>
-                            <img src="uploads/<?=$donnees['image']?>" width="auto" height="auto" alt="">
+                            <img class="imageview" src="uploads/<?=$donnees['image']?>" width="auto" height="auto" alt="" title="Voir projet <?=$donnees['title']?>">
                             <?php
                         }else{
                             ?>
-                            <img src="IMG/pasdimage.png" width="auto" height="auto" alt=""> 
+                            <img class="imageview" src="IMG/pasdimage.png" width="auto" height="auto" alt="" title="Voir projet <?=$donnees['title']?>"> 
                             <?php
                         };
                     ?>
                 </div>
-                <div id="projettexte">
-                    <div id="projettitre">
-                        <h3><?php echo $donnees['title'].'</h3><br>'?></h3>
-                    </div>
-                    <div id="projetdescription">
-                        <p><?php echo $donnees['description'].'</p><br>'?></p>
-                    </div>
-                    <div id="projetlanguage">
-                    <?php
-                        if ($donnees['html']=='oui'){
-                            echo '<br><img src="IMG/icons/htmlicon.png" alt="" width="30px" height="30px"><br>';
-                        }else{};
-                        if ($donnees['css']=='oui'){
-                            echo '<br><img src="IMG/icons/cssicon.png" alt="" width="30px" height="30px"><br>';
-                        }else{};
-                        if ($donnees['javascript']=='oui'){
-                            echo '<br><img src="IMG/icons/jsicon.png" alt="" width="30px" height="30px"><br>';
-                        }else{};
-                        if ($donnees['php']=='oui'){
-                            echo '<br><img src="IMG/icons/phpicon.png" alt="" width="30px" height="30px"><br>';
-                        }else{};
-                        if ($donnees['mysql']=='oui'){
-                            echo '<br><img src="IMG/icons/mysqlicon.png" alt="" width="30px" height="30px"><br>';
-                        }else{};
-                        if ($donnees['symfony']=='oui'){
-                            echo '<br><img src="IMG/icons/symfonyicon.png" alt="" width="30px" height="30px"><br>';
-                        }else{};
-                    ?>
-                    </div>
-                    <div id="projetlinks">
-                        <a href="<?php echo $donnees['website']?>" target="_blank" title="<?php echo $donnees['website']?>"><button>site web</button></a>
-                        <a href="<?php echo $donnees['github']?>" target="_blank" title="<?php echo $donnees['github']?>"><button>github</button></a>
-                    </div>
+            </div>
+            <?php
+            }
+            ?>
+            <div class="projettexte">
+                <div id="projettitre">
+                    <h3><?php echo $donnees['title'].'</h3><br>'?></h3>
+                </div>
+                <div id="projetdescription">
+                    <p><?php echo $donnees['description'].'</p><br>'?></p>
+                </div>
+                <div id="projetlanguage">
+                <?php
+                    if ($donnees['html']=='oui'){
+                        echo '<br><img src="IMG/icons/htmlicon.png" alt="" width="30px" height="30px"><br>';
+                    }else{};
+                    if ($donnees['css']=='oui'){
+                        echo '<br><img src="IMG/icons/cssicon.png" alt="" width="30px" height="30px"><br>';
+                    }else{};
+                    if ($donnees['javascript']=='oui'){
+                        echo '<br><img src="IMG/icons/jsicon.png" alt="" width="30px" height="30px"><br>';
+                    }else{};
+                    if ($donnees['php']=='oui'){
+                        echo '<br><img src="IMG/icons/phpicon.png" alt="" width="30px" height="30px"><br>';
+                    }else{};
+                    if ($donnees['mysql']=='oui'){
+                        echo '<br><img src="IMG/icons/mysqlicon.png" alt="" width="30px" height="30px"><br>';
+                    }else{};
+                    if ($donnees['symfony']=='oui'){
+                        echo '<br><img src="IMG/icons/symfonyicon.png" alt="" width="30px" height="30px"><br>';
+                    }else{};
+                ?>
+                </div>
+                <div id="projetlinks">
+                    <a href="<?php echo $donnees['website']?>" target="_blank" title="<?php echo $donnees['website']?>"><button id="web">site web</button></a>
+                    <a href="<?php echo $donnees['github']?>" target="_blank" title="<?php echo $donnees['github']?>"><button id="git">github</button></a>
                 </div>
             </div>
-        <?php
-            }
-        ?>
         </div>
     </section>
-    <section id="passion">
-
-    </section>
+    
     <section id="contact">
         <div id="contactcontainer">
             <form action="" method="POST">
