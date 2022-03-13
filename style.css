@@ -231,6 +231,17 @@ body::-webkit-scrollbar-thumb {
     flex-direction: column;
     row-gap: 100px;
 }
+#name::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #191516;
+  opacity: .7;
+  z-index: -1;
+}
 .container {
   display: flex;
   justify-content: center;
@@ -300,12 +311,13 @@ h1 {
   font-size: 25px;
 }
 .social i:hover{
-    opacity: .6;
+    color: #3ed3cb;
 
 }
 
 #about {
     height: 100vh;
+    background-color: #191516;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -339,7 +351,6 @@ h1 {
 .texte{
   width: 640px;
   height: auto;
-  min-width: 320px;
   background-color: #191516;
   border: 2px solid #FE9000;
   color: white;
@@ -366,12 +377,14 @@ h1 {
   display: flex;
   justify-content: space-around;
 
-  font-size: 2em;
+  font-size: 18px;
 }
 
 .skills {
   width:100%;
-  height: auto;
+  height: 100px;
+  background-color: #191516;
+  /* height: auto; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -381,14 +394,15 @@ h1 {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  -webkit-animation: slide 17s linear 0s infinite normal forwards;
-          animation: slide 17s linear 0s infinite normal forwards;
+  /* -webkit-animation: slide 17s linear 10s infinite normal forwards;
+          animation: slide 17s linear 10s infinite normal forwards; */
 }
 .skills i{
     font-size: 50px;
+    color: #FE9000;
 }
 
-@-webkit-keyframes slide {
+/* @-webkit-keyframes slide {
   0% {
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
@@ -424,8 +438,24 @@ h1 {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
+} */
+#projet::-webkit-scrollbar {
+  width: 12px;
+  /* width of the entire scrollbar */
 }
 
+#projet::-webkit-scrollbar-track {
+  background: transparent;
+  /* color of the tracking area */
+}
+
+#projet::-webkit-scrollbar-thumb {
+  background-color: #4d4d4d;
+  /* color of the scroll thumb */
+  /* roundness of the scroll thumb */
+  border: 1px solid black;
+  /* creates padding around scroll thumb */
+}
 #projets h2 {
   padding-top: 80px;
   font-size: 4em;
@@ -684,38 +714,8 @@ input{
     height: 40px;
     position: relative;
 }
-#email{
-    position: absolute;
-    top: 130px;
-    left: 50px;
-    color: white;
-    font-size: 16px;
-}
-input:focus ~ #email{
-    background-color: black;
-    top: 110px;
-    left: 50px;
-    font-size: 1.2rem;
-    transition: top 200ms ease-in,
-    left 200ms ease-in,
-    font-size 200ms ease-in;
-}
-#nom{
-    position: absolute;
-    top: 192px;
-    left: 50px;
-    color: white;
-    font-size: 16px;
-}
-input:focus ~ #nom{
-    background-color: black;
-    top: 172px;
-    left: 50px;
-    font-size: 1.2rem;
-    transition: top 200ms ease-in,
-    left 200ms ease-in,
-    font-size 200ms ease-in;
-}
+
+
 #textarea{
     position: absolute;
     top: 262px;
@@ -723,24 +723,15 @@ input:focus ~ #nom{
     color: white;
     font-size: 16px;
 }
-textarea:focus ~ #textarea{
-    background-color: black;
-    top: 245px;
-    left: 50px;
-    font-size: 1.2rem;
-    transition: top 200ms ease-in,
-    left 200ms ease-in,
-    font-size 200ms ease-in;
-}
+
 .__formtextarea, .__forminput{
-padding: 20px;
+padding: 5px;
 }
 
 input:hover, textarea:hover, button:hover{
     border-color: #4c4e63;
 }
 .__formtextarea{
-    margin-top: 10px;
     resize: none;
     width: 250px;
     height: 200px;
@@ -749,10 +740,6 @@ input:hover, textarea:hover, button:hover{
     color: white;
     border: 1px solid #FE9000;
 }
-form input:focus ~ form ::placeholder{
-    top: -0.5rem;
-}
-
 form{
     display: flex;
     justify-content: center;

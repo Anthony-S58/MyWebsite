@@ -23,7 +23,7 @@
             <div class="hamburger"><div class="bar"></div></div>
               <ul>
                 <li><a href="#about"  class="linkburger" data-after="A Propos">A Propos</a></li>
-                <li><a href="#projets" class="linkburger" data-after="Projets">Mes Projets</a></li>
+                <li><a href="#projets" class="linkburger" data-after="Projets">Projets</a></li>
                 <!-- <li><a href="#parcours" class="linkburger" data-after="Parcours">Mon Parcours</a></li> -->
                 <li><a href="#contact" class="linkburger" data-after="Contact">Contact</a></li>
 
@@ -45,7 +45,7 @@
           <br />
           <h2>Développeur web et web mobile</h2>
           <br />
-          <div id="iconportfolio"><a href="#projet" type="button" class="btn">Portfolio</a></div>
+          <div id="iconportfolio"><a href="#projets" type="button" class="btn">Portfolio</a></div>
         </div>
     </div>
     <div class="social">
@@ -153,8 +153,8 @@
                                 ?>
                             </div>
                             <div id="projetlinks">
-                                <a href="<?php echo $donnees['website']?>" target="_blank" title="<?php echo $donnees['website']?>"><button id="web">site web</button></a>
-                                <a href="<?php echo $donnees['github']?>" target="_blank" title="<?php echo $donnees['github']?>"><button id="git">github</button></a>
+                                <a href="<?php echo $donnees['website']?>" target="_blank" title="<?php echo $donnees['website']?>"><button id="web">Site web</button></a>
+                                <a href="<?php echo $donnees['github']?>" target="_blank" title="<?php echo $donnees['github']?>"><button id="git">Github</button></a>
                             </div>
                         </div>
                     </div>
@@ -174,12 +174,12 @@
         <div id="contacttitle"><h3 >Contact</h3></div>
         <div id="contactcontainer">
             <form action="contact.php" method="POST">
-                <input  class="__forminput" type="email" name="email" placeholder="" required>
-                <label for="email" id="email">Mail</label>
-                <input class="__forminput"type="text" name="nom" placeholder="" required>
-                <label for="nom" id="nom">Nom</label>
-                <textarea class="__formtextarea" cols="30" name="message" rows="10" placeholder=""></textarea>
-                <label for="message" id="textarea">Message</label>
+                <label for="email"></label>
+                <input  class="__forminput" type="email" name="email" id="email" placeholder="Mail" required>
+                <label for="nom"></label>
+                <input class="__forminput"type="text" name="nom" id="nom" placeholder="Nom" required>
+                <label for="message"></label>
+                <textarea class="__formtextarea" cols="30" name="message" rows="10" id="message" placeholder="Message"></textarea>
                 <button type="submit" onload="timer()">Envoyer</button>
             </form>
         </div>
