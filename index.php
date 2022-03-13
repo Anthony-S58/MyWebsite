@@ -1,205 +1,199 @@
 <?php
     require_once('bddconnect.php');
 ?>
-     <?php
-
-ob_start();
-
-// $email=HTMLSpecialChars($_POST['email']);
-// $message=HTMLSpecialChars($_POST['message']);
-
-if (isset($_POST['message'])) {
-    $position_arobase = strpos($_POST['email'], '@');
-    if ($position_arobase === false)
-        echo '<p>Votre email doit comporter un arobase.</p>';
-    else {
-        $retour = mail('a.simonneau@codeur.online', 'Envoi depuis la page Contact', $_POST['message'], 'From: ' . $_POST['email']);
-
-        if($retour){
-        echo '<p>Votre message a été envoyé.</p>';
-        // header('Refresh: 3; url="index.php"');
-        ob_flush();
-    }
-
-        else
-            echo '<p>Erreur.</p>';
-    }
-}
-?>
-
-<?php
-     // Récupérer les données
- $reponse = $bdd->query('SELECT * FROM projets');
-
- ?>
-
 <!DOCTYPE html>
 <html lang="Fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Anthony SIMONNEAU - Développeur Web</title>
-</head>
-<body>
-    <section id=presentation>
-    <nav>
-        <span id="logo">Anthony SIMONNEAU</span>
-        <hr>
-        <div id="navigation">
-            <ul>
-                <li href="#" class="selected">A Propos</li>
-                <li><a href="#">Mes Skills</a></li>
-                <li><a href="#">Mes Réalisations</a></li>
-                <li><a href="#">Me contacter</a></li>
-            </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>MON PORTFOLIO</title>
+  </head>
+
+  <body>
+    <section id="header">
+      <div class="header container">
+        <div class="nav-bar">
+          <div class="brand">
+              <a href="#name"><h1><span>A</span>nthony <span>S</span>imonneau</h1></a>
+          </div>
+          <div class="nav-list">
+            <div class="hamburger"><div class="bar"></div></div>
+              <ul>
+                <li><a href="#about"  class="linkburger" data-after="A Propos">A Propos</a></li>
+                <li><a href="#projets" class="linkburger" data-after="Projets">Mes Projets</a></li>
+                <li><a href="#parcours" class="linkburger" data-after="Parcours">Mon Parcours</a></li>
+                <li><a href="#contact" class="linkburger" data-after="Contact">Contact</a></li>
+
+              </ul>
+          </div>
         </div>
-    </nav>
-    <div id="cadrepresentation">
-        <div id="intro">
-            <h2>Bonjour, je suis</h2>
-            <h1>Anthony SIMONNEAU</h1>
-            <h2>Développeur Web et mobile</h2>
-            <div id="photo"></div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id similique rerum vel odit voluptas fugit beatae optio dolores quae adipisci eos, perferendis iste unde sint facere! Voluptatum in molestiae modi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Id similique rerum vel odit voluptas fugit beatae optio dolores quae adipisci eos, perferendis iste unde sint facere! Voluptatum in molestiae modi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Id similique rerum vel odit voluptas fugit beatae optio dolores quae adipisci eos, perferendis iste unde sint facere! Voluptatum in molestiae modi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Id similique rerum vel odit voluptas fugit beatae optio dolores quae adipisci eos, perferendis iste unde sint facere! Voluptatum in molestiae modi?</p>
+      </div>
+
+    </section>
+
+    <!-- SECTION NOM ET PRENOM -->
+
+    <section id="name">
+      <div class="container">
+        <div>
+          <h1>Bonjour,</h1>
+          <h1>Je suis</h1>
+          <h1 class="typing">Anthony SIMONNEAU</h1>
+          <br />
+          <h2>Développeur web et web mobile</h2>
+          <br />
+          <div id="iconportfolio"><a href="#projet" type="button" class="btn">Portfolio</a></div>
         </div>
-        <div id="fullstack">
-            <div id="containerfrontback">
-                <div id="front">
-                    <div id="textfront">
-                        <h4>Front End</h4>
-                    </div>
-                    <div class="cadrelangages">
-                        <div id="html"><i class="fab fa-html5"></i></div>
-                        <div id="css"><i class="fab fa-css3-alt"></i></div>
-                        <div id="javascript"><i class="fab fa-js"></i></div>
-                    </div>
-                </div>
-                <div id="back">
-                    <div id="textback">
-                        <h4>Back End</h4>
-                    </div>
-                    <div class="cadrelangages">
-                        <div id="php"><i class="fab fa-php"></i></div>
-                        <div id="symfony"><i class="fab fa-symfony"></i></div>
-                    </div>
-                </div>
-                <div id="tools">
-                    <div id="texttools">
-                        <h4>Outils Utilisés</h4>
-                    </div>
-                    <div class="cadrelangages">
-                        
-                    </div>
-                </div>
-        </div>
-        <div id="social">
-            <a href="https://github.com/Anthony-S58" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/anthony-simonneau-5545b8214/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href=""><i class="fab fa-twitter"></i></a>
-        </div>
+    </div>
+    <div class="social">
+      <a href="https://github.com/Anthony-S58" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/anthony-simonneau-5545b8214/" target="_blank"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-slack"></i></a>
+      <a href="#"><i class="fab fa-discord"></i></a>
+      <a href="#"><i class="fab fa-gitkraken"></i></a>
     </div>
     </section>
 
-    <section id="skills">
-            <h2>Mes skills</h2>
-            <div class="langagetitle">
-                <h3>Les langages que j'utilise</h3>
-            </div>
-            <div class="skillcontainer">
+    <!-- FIN SECTION NOM ET PRENOM -->
 
-            </div>
-            <div class="space"></div>
-            <div class="progtitle">
-                <h3>Les programmes que j'utilise</h3>
-            </div>
-            <div class="skillcontainer">
+    <!-- A PROPOS -->
 
-            </div>
+    <section id="about">
+        <h2>A propos</h2>
+      <div class="portrait">
+        <img
+          src="IMG/portrait.jpg"
+          alt="image portrait"
+          height="450px"
+          width="350px"
+        />
+      </div>
+
+      <div class="texte">
+
+        <p>
+           En formation à l'Acces Code School de Nevers(58) depuis Mars 2021.
+          Profil tertiaire et polyvalent, j'ai travaillé dans beaucoup de domaines.<br>
+        </p>
+
+        <p>
+         Fan d'informatique, de jeux vidéos et de nouvelles technologies.<br><br>
+          J'ai décidé de me consacrer au code en janvier 2021 et je découvre chaque jour, un vaste univers qui me passionne de plus en plus...
+        </p>
+      </div>
+      <div class="skills">
+        
+        <i class="fab fa-html5" title="Html"></i>
+        <i class="fab fa-css3-alt" title="Css"></i>
+        <i class="fab fa-less" title="Less"></i>
+        <i class="fab fa-sass" title="Sass"></i>
+        <i class="fab fa-js" title="Javascript"></i>
+        <i class="fab fa-php" title="Php"></i>
+        <i class="fab fa-symfony" title="Symfony"></i>
+        <i class="fab fa-python" title="Python"></i>
+        <i class="fab fa-figma" title="Figma"></i>
+      </div>
     </section>
 
-    <section id="realisations">
-    <?php
-        // Récupérer les données
-        $reponse = $bdd->query('SELECT * FROM projets ORDER BY id DESC');
-    ?>
-        <h2>Réalisations</h2>
-        <div id="cadreprojets">
+    <!-- MES SKILLS -->
+
+
+    <!-- FIN SECTION A PROPOS ET MES SKILLS -->
+
+    <!-- MES PROJETS -->
+
+    <section id="projets">
+      <h2>Mes Projets</h2>
+      <?php
+      $reponse = $bdd->query('SELECT * FROM projets ORDER BY id DESC');
+      ?>
+                <div id="projet">
+      <?php
+            while ($donnees = $reponse ->fetch()) {
+        ?>
+                                
+                <div class="flip-box">
+                    <div class="flip-box-inner">
+                        <div class="flip-box-front">
+                            <?php
+                            if( !empty($donnees['image'])){
+                            ?>
+                                <img class="imageview" src="uploads/<?=$donnees['image']?>" width="auto" height="auto" alt="" title="Voir projet <?=$donnees['title']?>">
+                            <?php
+                            }else{
+                                ?>
+                                <img class="imageview" src="IMG/pasdimage.png" width="auto" height="auto" alt="" title="Voir projet <?=$donnees['title']?>"> 
+                            <?php
+                            };
+                            ?>
+                        </div>         
+                        <div class="flip-box-back">
+                            <div id="projettitle">
+                                <h3><?php echo $donnees['title'].'</h3><br>'?><br>
+                            </div>
+                            <div id="projetdescription">
+                                <p><?php echo $donnees['description']?></p><br>
+                            </div>
+                            <div id="projetlanguage">
+                                <?php
+                                    if ($donnees['html']=='oui'){
+                                        echo '<br><img src="IMG/icons/htmlicon.png" alt="" width="30px" height="30px"><br>';
+                                    }else{};
+                                    if ($donnees['css']=='oui'){
+                                        echo '<br><img src="IMG/icons/cssicon.png" alt="" width="30px" height="30px"><br>';
+                                    }else{};
+                                    if ($donnees['javascript']=='oui'){
+                                        echo '<br><img src="IMG/icons/jsicon.png" alt="" width="30px" height="30px"><br>';
+                                    }else{};
+                                    if ($donnees['php']=='oui'){
+                                        echo '<br><img src="IMG/icons/phpicon.png" alt="" width="30px" height="30px"><br>';
+                                    }else{};
+                                    if ($donnees['mysql']=='oui'){
+                                        echo '<br><img src="IMG/icons/mysqlicon.png" alt="" width="30px" height="30px"><br>';
+                                    }else{};
+                                    if ($donnees['symfony']=='oui'){
+                                        echo '<br><img src="IMG/icons/symfonyicon.png" alt="" width="30px" height="30px"><br>';
+                                    }else{};
+                                ?>
+                            </div>
+                            <div id="projetlinks">
+                                <a href="<?php echo $donnees['website']?>" target="_blank" title="<?php echo $donnees['website']?>"><button id="web">site web</button></a>
+                                <a href="<?php echo $donnees['github']?>" target="_blank" title="<?php echo $donnees['github']?>"><button id="git">github</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         <?php
-            while ($donnees = $reponse -> fetch()) {
-        ?>      
-            <div id="projet">
-                <div id="projetimage">
-                    <?php
-                        if( !empty($donnees['image'])){
-                            ?>
-                            <img class="imageview" src="uploads/<?=$donnees['image']?>" width="auto" height="auto" alt="" title="Voir projet <?=$donnees['title']?>">
-                            <?php
-                        }else{
-                            ?>
-                            <img class="imageview" src="IMG/pasdimage.png" width="auto" height="auto" alt="" title="Voir projet <?=$donnees['title']?>"> 
-                            <?php
-                        };
-                    ?>
-                </div>
-            </div>
-            <?php
-            }
-            ?>
-            <div class="projettexte">
-                <div id="projettitre">
-                    <h3><?php echo $donnees['title'].'</h3><br>'?></h3>
-                </div>
-                <div id="projetdescription">
-                    <p><?php echo $donnees['description'].'</p><br>'?></p>
-                </div>
-                <div id="projetlanguage">
-                <?php
-                    if ($donnees['html']=='oui'){
-                        echo '<br><img src="IMG/icons/htmlicon.png" alt="" width="30px" height="30px"><br>';
-                    }else{};
-                    if ($donnees['css']=='oui'){
-                        echo '<br><img src="IMG/icons/cssicon.png" alt="" width="30px" height="30px"><br>';
-                    }else{};
-                    if ($donnees['javascript']=='oui'){
-                        echo '<br><img src="IMG/icons/jsicon.png" alt="" width="30px" height="30px"><br>';
-                    }else{};
-                    if ($donnees['php']=='oui'){
-                        echo '<br><img src="IMG/icons/phpicon.png" alt="" width="30px" height="30px"><br>';
-                    }else{};
-                    if ($donnees['mysql']=='oui'){
-                        echo '<br><img src="IMG/icons/mysqlicon.png" alt="" width="30px" height="30px"><br>';
-                    }else{};
-                    if ($donnees['symfony']=='oui'){
-                        echo '<br><img src="IMG/icons/symfonyicon.png" alt="" width="30px" height="30px"><br>';
-                    }else{};
-                ?>
-                </div>
-                <div id="projetlinks">
-                    <a href="<?php echo $donnees['website']?>" target="_blank" title="<?php echo $donnees['website']?>"><button id="web">site web</button></a>
-                    <a href="<?php echo $donnees['github']?>" target="_blank" title="<?php echo $donnees['github']?>"><button id="git">github</button></a>
-                </div>
-            </div>
-        </div>
+        }
+        ?>
+        </div>  
     </section>
+
+    <!-- FIN SECTION PROJETS -->
+
+    <!-- CONTACT -->
     
     <section id="contact">
+        
+        <div id="contacttitle"><h3 >Contact</h3></div>
         <div id="contactcontainer">
-            <form action="" method="POST">
+            <form action="contact.php" method="POST">
                 <input  class="__forminput" type="email" name="email" placeholder="" required>
                 <label for="email" id="email">Mail</label>
+                <input class="__forminput"type="text" name="nom" placeholder="" required>
+                <label for="nom" id="nom">Nom</label>
                 <textarea class="__formtextarea" cols="30" name="message" rows="10" placeholder=""></textarea>
                 <label for="message" id="textarea">Message</label>
-                <button type="submit">Envoyer</button>
+                <button type="submit" onload="timer()">Envoyer</button>
             </form>
-
-
         </div>
-       
 
+    </section>
+    <section id="end">
         <footer>
-            
+            <p>Copyright &copy; 2022 Anthony SIMONNEAU. All Rights Reserved</p>
         </footer>
     </section>
 

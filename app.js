@@ -1,49 +1,58 @@
-console.log('test');
-
-let front = document.querySelector("#front");
-let back = document.querySelector("#back");
-let tools = document.querySelector("#tools");
-
-let textfront = document.querySelector("#textfront");
-let textback = document.querySelector("#textback");
-let texttools = document.querySelector("#texttools");
-
-let html = document.querySelector("#html");
-let css = document.querySelector("#css");
-let javascript = document.querySelector("#javascript");
-let php = document.querySelector("#php");
-let symfony = document.querySelector("#symfony");
-
-front.addEventListener('mouseenter', () => {
-    textfront.style.display="none";
-    html.style.display="flex";
-    css.style.display="flex";
-    javascript.style.display="flex";
-});
-front.addEventListener('mouseleave', () => {
-    textfront.style.display="flex";
-    html.style.display="none";
-    css.style.display="none";
-    javascript.style.display="none";
-});
-
-back.addEventListener('mouseenter', () => {
-    textback.style.display="none";
-    php.style.display="flex";
-    symfony.style.display="flex";
-});
-back.addEventListener('mouseleave', () => {
-    textback.style.display="flex";
-    php.style.display="none";
-    symfony.style.display="none";
+function timer(){
+let cpt = 5;
+ 
+    timer = setInterval(function(){
 
 
+        if(cpt>0)
+        {
+            --cpt; // décrémente le compteur
+            document.getElementById("chrono").innerHTML = "" + cpt + "...";
+            if(cpt<=1){
+                document.getElementById("secondes").innerHTML = " seconde..." ;
+            }else{
+                document.getElementById("secondes").innerHTML = " secondes..." ;
+            };
+        }
+    }, 1000);
+};
+window.onload = function(){
+    timer();
+};
+
+const hamburger = document.querySelector('.hamburger');
+const mobile_menu = document.querySelector('.header .nav-list ul');
+const links = document.querySelectorAll('.linkburger');
+
+let menuOpen = false;
+hamburger.addEventListener('click',() => {
+    if (!menuOpen) {
+        hamburger.classList.add('open');
+        menuOpen = true;
+    }else {
+        hamburger.classList.remove('open');
+        menuOpen = false;
+    }
 });
 
-tools.addEventListener('mouseenter', () => {
-    texttools.style.display="none";
-});
-tools.addEventListener('mouseleave', () => {
-    texttools.style.display="flex";
+let mobileOpen = false;
+hamburger.addEventListener('click',() => {
+    if (!mobileOpen) {
+        mobile_menu.classList.add('open');
+        mobileOpen = true;
+    }else {
+        mobile_menu.classList.remove('open');
+        mobileOpen = false;
+    }
 });
 
+links.forEach(s => {
+    s.addEventListener('click',() => {
+        mobile_menu.classList.remove('open');
+        hamburger.classList.remove('open');
+        menuOpen = false;
+        mobileOpen = false;
+    console.log(menuOpen, mobileOpen);
+                
+    })
+});
