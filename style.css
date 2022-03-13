@@ -356,7 +356,7 @@ h1 {
 }
 
 #about h2 {
-  padding-top: 80px;
+  margin-top: 80px;
   font-size: 4em;
   text-shadow: 3px 3px 7px #191516;
   color: #FE9000;
@@ -427,7 +427,7 @@ h1 {
 }
 
 #projets h2 {
-  /* padding-top: 50px; */
+  padding-top: 80px;
   font-size: 4em;
   text-shadow: 2px 2px 4px #424244;
   color: #3ed3cb;
@@ -468,7 +468,7 @@ h1 {
 }
 
 .flip-box {
-  width: 320px;
+  width: 420px;
   height: 260px;
   -webkit-perspective: 500px;
           perspective: 500px;
@@ -500,7 +500,7 @@ h1 {
 }
 
 .flip-box-back h3 {
-  font-size: 2.5em;
+  font-size: 1.8em;
   color: #3ed3cb;
 }
 #projettitle{
