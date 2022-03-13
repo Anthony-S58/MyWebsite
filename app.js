@@ -7,7 +7,7 @@ let cpt = 5;
         if(cpt>0)
         {
             --cpt; // décrémente le compteur
-            document.getElementById("chrono").innerHTML = "" + cpt + "...";
+            document.getElementById("chrono").innerHTML = "" + cpt + "";
             if(cpt<=1){
                 document.getElementById("secondes").innerHTML = " seconde..." ;
             }else{

@@ -62,27 +62,26 @@
 
     <section id="about">
         <h2>A propos</h2>
-      <div class="portrait">
-        <img
-          src="IMG/portrait.jpg"
-          alt="image portrait"
-          height="450px"
-          width="350px"
-        />
-      </div>
+        <div id="infos">
+          <div class="portrait">
+            <img src="IMG/moi2.png" alt="photo anthony simonneau">
+          </div>
 
-      <div class="texte">
+          <div class="texte">
 
-        <p>
-           En formation à l'Acces Code School de Nevers(58) depuis Mars 2021.
-          Profil tertiaire et polyvalent, j'ai travaillé dans beaucoup de domaines.<br>
-        </p>
-
-        <p>
-         Fan d'informatique, de jeux vidéos et de nouvelles technologies.<br><br>
-          J'ai décidé de me consacrer au code en janvier 2021 et je découvre chaque jour, un vaste univers qui me passionne de plus en plus...
-        </p>
-      </div>
+            <p>
+              En formation à l'Acces Code School de Nevers(58) depuis Mars 2021.
+              Profil tertiaire et polyvalent, j'ai travaillé dans beaucoup de domaines.
+              </p>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non laboriosam suscipit soluta odio, explicabo ad distinctio consequatur fugit ipsam, id eaque. Aperiam est architecto commodi!</p>
+              <p>
+            
+            Fan d'informatique, de jeux vidéos et de nouvelles technologies.
+              J'ai décidé de me consacrer au code en janvier 2021 et je découvre chaque jour, un vaste univers qui me passionne de plus en plus...
+            </p>
+          </div>
+        </div>
+      <!-- MES SKILLS -->
       <div class="skills">
         
         <i class="fab fa-html5" title="Html"></i>
@@ -97,15 +96,14 @@
       </div>
     </section>
 
-    <!-- MES SKILLS -->
-
-
     <!-- FIN SECTION A PROPOS ET MES SKILLS -->
+
+
 
     <!-- MES PROJETS -->
 
     <section id="projets">
-      <h2>Mes Projets</h2>
+      <h2>Projets</h2>
       <?php
       $reponse = $bdd->query('SELECT * FROM projets ORDER BY id DESC');
       ?>
