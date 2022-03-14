@@ -26,7 +26,7 @@ ob_start();
         if ($position_arobase === false)
             echo '<h1>Votre email doit comporter un arobase.</h1>';
         else {
-            $retour = mail('a.simonneau@codeur.online', 'Envoi depuis la page Contact', $_POST['nom'], $_POST['message'], 'From: ' . $_POST['email']);
+            $retour = mail('a.simonneau@codeur.online', 'Envoi depuis la page Contact', $_POST['message'], 'From: ' . $_POST['email']);
 
             if($retour){
             echo "<h1>Votre message a bien été envoyé !!! Merci.</h1>";
